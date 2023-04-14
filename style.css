@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --dark-blue: #0A3871;
+  --gray: #495057;
+  --grayDark: #343A40;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #F3F5FC;
+  color: var(--dark-blue);
+  padding: 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+textarea {
+  border: none;
+  background-color: #F3F5FC;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+textarea::placeholder {
+  color: var(--dark-blue);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+header {
+  height: 96px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text {
+  margin: 56px auto 0px auto;
+  width: 100%;
+  height: 300px;
+  font-size: 32px;
+  line-height: 48px;
+  color: var(--dark-blue);
+  min-height: 74%;
+}
+
+.requirements {
+  display: inline-flex;
+}
+
+.requirements img {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.requirements p {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--gray);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  height: 160px;
+}
+
+
+.buttons #encrypt {
+  background-color: var(--dark-blue);
+  color: white;
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.buttons #decrypt,
+.copy {
+  background-color: white;
+  color: var(--dark-blue);
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid var(--dark-blue);
+}
+
+.message {
+  border-radius: 24px;
+  background-color: white;
+  margin: 64px 16px 16px 16px;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.message img {
+  display: none;
+}
+
+.messageContainer .notext {
+  font-style: normal;
+  text-align: center;
+  color: var(--grayDark);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 16px;
+}
+
+.messageContainer .inputRequest {
+  text-align: center;
+  color: var(--grayDark);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.encryptedText {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 32px;
+}
+
+.copy {
+  padding: 24px;
+  border-radius: 24px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .buttons button {
+    min-width: 48%;
+    max-width: 330px;
+  }
+
+  .buttons #encrypt {
+    margin-bottom: 0px;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    height: calc(100% - 48px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: unset;
+  }
+
+  .container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 68px;
+    width: 100%;
+    padding-bottom: 32px;
+  }
+
+  .buttons button {
+    min-width: 280px;
+    max-width: 330px;
+  }
+
+  .buttons #encrypt {
+    margin-bottom: 0px;
+  }
+
+  .message {
+    width: 30%;
+    margin: 0px;
+    margin-left: 20px;
+    padding: 0px;
+    justify-content: center;
+    height: 100%;
+  }
+
+
+  .messageContainer {
+    margin: 0px 40px;
+    padding: 32px;
+    max-width: fit-content;
+    max-height: 100%;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+
+  .copy {
+    margin: 32px;
+  }
+
+  .message img {
+    display: block;
+  }
+
+
+  .text {
+
+    min-height: 70%;
+    width: 100%;
+  }
+}
