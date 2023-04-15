@@ -4,15 +4,27 @@ let container = document.getElementById("container")
 const resultPhrase = document.querySelector(".encryptedText")
 const size = textarea.clientHeight
 const width = window.innerWidth
-const body = document.querySelector("body")
+let body = document.querySelector("body")
+const heightBody = body.clientHeight
+let main = document.querySelector("main")
+let messagediv = document.querySelector(".message")
 
 const resize = () => {
-  if (width < 1024) {
-    textarea = document.getElementById("myTextarea")
-    if (size < textarea.scrollHeight) {
+
+  if (size < textarea.scrollHeight) {
+    if (width < 768) {
       textarea.style.height = "auto"
       textarea.style.height = textarea.scrollHeight + "px"
-      container.style.height = container.style.height + textarea.style.height + "px"
+      main.style.height = "auto"
+      body.style.height = "auto"
+    } else if (width < 1024) {
+      textarea.style.height = "auto"
+      textarea.style.height = textarea.scrollHeight + "px"
+      main.style.height = "auto"
+      main.style.height = `calc(${textarea.style.height} + ${messagediv.clientHeight}px + 300px)`
+      body.style.height = "auto"
+      const value = heightBody - 800
+      body.style.height = `calc(${main.clientHeight}px + ${value}px)`
     }
   }
 }
@@ -41,6 +53,23 @@ const copy = () => {
 const encryptAction = (phrase) => {
   const message = encrypt(phrase, dictionary)
   message === '' ? showHtml(message) : hideHtml(message)
+
+  if (size < textarea.scrollHeight) {
+    if (width < 768) {
+      textarea.style.height = "auto"
+      textarea.style.height = textarea.scrollHeight + "px"
+      main.style.height = "auto"
+      body.style.height = "auto"
+    } else if (width < 1024) {
+      textarea.style.height = "auto"
+      textarea.style.height = textarea.scrollHeight + "px"
+      main.style.height = "auto"
+      main.style.height = `calc(${textarea.style.height} + ${messagediv.clientHeight}px + 300px)`
+      body.style.height = "auto"
+      body.style.height = `calc(${main.clientHeight}px + 350px)`
+    }
+  }
+
 }
 
 const decryptAction = (phrase) => {

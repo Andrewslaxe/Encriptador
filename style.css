@@ -16,10 +16,18 @@ html {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: var(--dark-blue);
+}
+
 body {
   background-color: #F3F5FC;
   color: var(--dark-blue);
   padding: 24px 16px;
+}
+
+main {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -159,9 +167,43 @@ header {
   text-align: center;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  color: var(--dark-blue);
+  text-align: center;
+}
+
+footer img {
+  width: 24px;
+  height: 24px;
+}
+
+footer p {
+  margin: 0px 30px;
+}
+
+footer #hollow {
+  width: 80px;
+  height: 80px;
+}
+
+.social {
+  padding: 10px;
+}
+
+
+
 @media screen and (min-width: 768px) {
+
   body {
-    padding: 75px 40px 0px 40px;
+    min-height: calc(100% - 100px);
+  }
+
+  main {
+    padding: 40px 84px 0px 84px;
   }
 
   .buttons {
@@ -181,17 +223,22 @@ header {
   }
 
   .text {
-    height: 600px;
+    min-height: 200px;
   }
+
 }
 
 @media screen and (min-width: 1024px) {
   body {
-    height: calc(100% - 80px);
+    height: calc(100% - 100px);
+  }
+
+  main {
     display: flex;
     justify-content: space-between;
     flex-direction: unset;
-    padding: 40px 84px;
+    padding: 40px 0 40px 84px;
+    height: 100%;
   }
 
   .container {
@@ -208,7 +255,6 @@ header {
     justify-content: space-between;
     height: 68px;
     width: 100%;
-    padding-bottom: 32px;
   }
 
   .buttons button {
@@ -247,10 +293,32 @@ header {
     display: block;
   }
 
-
   .text {
     margin-top: 50px;
     min-height: 70%;
     width: 100%;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    color: var(--dark-blue);
+    text-align: center;
+  }
+
+
+  footer p {
+    margin: 0px 30px;
+  }
+
+  footer #hollow {
+    width: 80px;
+    height: 80px;
+  }
+
+  .social {
+    padding: 10px;
   }
 }
