@@ -46,8 +46,14 @@ const decrypt = (phrase, dictionary) => {
 }
 
 const copy = () => {
-  let copyText = document.querySelector(".encryptedText").innerHTML
-  navigator.clipboard.writeText(copyText)
+  let copyButton = document.querySelector(".copy")
+  copyButton.innerHTML = "Copiado! &#10004"
+  copyButton.style.backgroundColor = "#e7ecfe"
+  navigator.clipboard.writeText(document.querySelector(".encryptedText").innerHTML)
+  setTimeout(() => {
+    copyButton.innerHTML = "Copiar"
+    copyButton.style.backgroundColor = "#fff"
+  }, 5000)
 }
 
 const encryptAction = (phrase) => {
