@@ -10,7 +10,6 @@ let main = document.querySelector("main")
 let messagediv = document.querySelector(".message")
 
 const resize = () => {
-
   if (size < textarea.scrollHeight) {
     if (width < 768) {
       textarea.style.height = "auto"
@@ -74,7 +73,7 @@ const encryptAction = (phrase) => {
 
 const decryptAction = (phrase) => {
   const message = decrypt(phrase, dictionary)
-  message === '' ? showHtml(message) : hideHtml(message)
+  message === '' ? showHtml() : hideHtml(message)
 }
 
 const hideHtml = (message) => {
@@ -92,4 +91,9 @@ const showHtml = () => {
   document.querySelector(".inputRequest").style.display = "block"
   document.querySelector(".encryptedText").style.display = "none"
   document.querySelector(".copy").style.display = "none"
+  if (width > 1024) {
+    console.log('teste')
+    document.querySelector('.message img').style.display = "block"
+    document.querySelector('.message').style["justify-content"] = "center"
+  }
 }
