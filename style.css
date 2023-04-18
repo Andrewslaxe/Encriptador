@@ -98,27 +98,56 @@ header {
   height: 160px;
 }
 
+.buttons button,
+.copy {
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 18px;
+  font-weight: bold;
+  padding: 21px;
+}
 
 .buttons #encrypt {
   background-color: var(--dark-blue);
   color: white;
-  font-size: 16px;
-  line-height: 19px;
-  border-radius: 24px;
-  padding: 24px;
   margin-bottom: 24px;
+  margin: 1px solid var(--dark-blue);
+  transition: all 0.3s ease;
+}
+
+
+
+.buttons #encrypt:hover {
+  background-color: #04172f;
+  margin: 1px solid #F3F5FC;
+}
+
+.buttons #encrypt:active {
+  transform: scale(0.95);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.566);
+
 }
 
 .buttons #decrypt,
 .copy {
   background-color: white;
   color: var(--dark-blue);
-  font-size: 16px;
-  line-height: 19px;
-  border-radius: 24px;
-  padding: 24px;
-  border: 1px solid var(--dark-blue);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
+
+.buttons #decrypt:hover,
+.copy:hover {
+  background-color: #e7ecfe;
+
+}
+
+.buttons #decrypt:active,
+.copy:active {
+  transform: scale(0.95);
+  box-shadow: 3px 2px 22px 1px var(--dark-blue);
+}
+
 
 .message {
   border-radius: 24px;
