@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --dark-blue: #0A3871;
+  --gray: #495057;
+  --grayDark: #343A40;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  background-color: #F3F5FC;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-blue);
+}
+
+body {
+  padding: 4%;
+}
+
+
+header {
+  width: 100%;
+  margin: 4% 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#container {
+  height: auto;
+  min-height: 85vh;
+  width: 100%;
+}
+
+textarea {
+  border: none;
+  resize: none;
+  width: 100%;
+  min-height: 50vh;
+  font-size: 2rem;
+  margin: 10% 0;
+  background-color: transparent;
+  color: var(--dark-blue);
+  height: auto;
+}
+
+textarea::placeholder {
+  color: var(--dark-blue);
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.requirements {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.75rem;
+  margin: 1rem 0;
+}
+
+.requirements img {
+  margin-right: 0.5rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1.5rem;
+}
+
+.buttons button,
+#copy {
+  padding: 1.5rem;
+  border-radius: 24px;
+  font-size: 1rem;
+  width: 100%;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#copy {
+  width: 330px;
+  display: none;
+}
+
+#encrypt {
+  background-color: var(--dark-blue);
+  color: white;
+}
+
+#decrypt,
+#copy {
+  background-color: white;
+  color: var(--dark-blue);
+}
+
+.buttons #encrypt:hover {
+  background-color: #04172f;
+  margin: 1px solid #F3F5FC;
+}
+
+.buttons #encrypt:active {
+  transform: scale(0.95);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.566);
+
+}
+
+.buttons #decrypt,
+#copy {
+  background-color: white;
+  color: var(--dark-blue);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.buttons #decrypt:hover,
+#copy:hover {
+  background-color: #e7ecfe;
+
+}
+
+.buttons #decrypt:active,
+#copy:active {
+  transform: scale(0.95);
+  box-shadow: 3px 2px 22px 1px var(--dark-blue);
+}
+
+.message {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.message img {
+  display: none;
+}
+
+
+.notext {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.message .inputRequest {
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.encryptedText {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 32px;
+  word-wrap: break-word;
+}
+
+footer {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  margin-right: 8px;
+}
+
+.social {
+  padding: 5px;
+}
+
+.social img {
+  width: 24;
+  height: 24px;
+}
+
+#hollow {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  #container {
+    min-height: 60vh;
+  }
+
+  main {
+    height: 95vh;
+  }
+
+  textarea {
+    min-height: 35vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #container {
+    width: 70%;
+    height: 100%;
+  }
+
+  body {
+    padding-bottom: 1rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+  }
+
+  header {
+    width: 10%;
+    margin: 0;
+  }
+
+  textarea {
+    width: 80%;
+    height: 50%;
+  }
+
+  .buttons {
+    height: 10vh;
+  }
+
+  .buttons button {
+    width: 80%;
+  }
+
+  #copy {
+    width: 100%;
+    display: none;
+  }
+
+  .message {
+    width: 25%;
+    margin: 0;
+    height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  .message img {
+    display: block;
+    width: 100%;
+  }
+
+  footer {
+    margin-top: 3rem;
+  }
+
+  .messageContainer {
+    overflow: scroll;
+  }
+}

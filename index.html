@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fixed.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.png">
   <title>Encryptor</title>
 </head>
@@ -16,7 +16,8 @@
       <img src="assets/aluraicon.svg" />
     </header>
     <div class="container" id="container">
-      <textarea class="text" id="myTextarea" oninput="resize()" placeholder="Ingrese el texto aquí"></textarea>
+      <textarea id="myTextarea" oninput="resize()" placeholder="Ingrese el texto aquí"></textarea>
+
       <div class="requirements">
         <img src="assets/exclamation.svg">
         <p>Solo letras minúsculas y sin acentos</p>
@@ -37,11 +38,11 @@
         <p class="inputRequest">Ingresa el texto que desees encriptar o desencriptar.</p>
         <p class="encryptedText" style="display: none;"></p>
       </div>
-      <button class="copy" style="display: none;" onclick="copy()">Copiar</button>
+      <button id="copy" onclick="copy()">Copiar</button>
     </div>
   </main>
   <footer>
-    <img src="assets/Hollow.png" id="hollow" />
+    <img id="hollow" src="assets/Hollow.png">
     <p>Developed by <a href="https://andrewslaxe.github.io/portfolio/">Kengan</a></p>
     <a href="https://www.linkedin.com/in/andresperaza/" class="social">
       <img src="assets/linkedin.svg" />

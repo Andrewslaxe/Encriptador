@@ -1,13 +1,17 @@
 const dictionary = { a: "ai", e: "enter", i: "imes", o: "ober", u: "ufat" }
+
+const regex = /^[a-z\s]+$/
+
 let textarea = document.getElementById("myTextarea")
 let container = document.getElementById("container")
-const resultPhrase = document.querySelector(".encryptedText")
-const size = textarea.clientHeight
-const width = window.innerWidth
 let body = document.querySelector("body")
-const heightBody = body.clientHeight
 let main = document.querySelector("main")
 let messagediv = document.querySelector(".message")
+const resultPhrase = document.querySelector(".encryptedText")
+
+const size = textarea.clientHeight
+const width = window.innerWidth
+const heightBody = body.clientHeight
 
 const resize = () => {
   if (size < textarea.scrollHeight) {
@@ -30,7 +34,8 @@ const resize = () => {
 
 
 const encrypt = (phrase, dictionary) => {
-  phrase = phrase.split('')
+  if (phrase)
+    phrase = phrase.split('')
   for (let i in phrase) {
     phrase[i] = dictionary[phrase[i]] || phrase[i]
   }
@@ -45,7 +50,7 @@ const decrypt = (phrase, dictionary) => {
 }
 
 const copy = () => {
-  let copyButton = document.querySelector(".copy")
+  let copyButton = document.querySelector("#copy")
   copyButton.innerHTML = "Copiado! &#10004"
   copyButton.style.backgroundColor = "#e7ecfe"
   navigator.clipboard.writeText(document.querySelector(".encryptedText").innerHTML)
@@ -57,8 +62,11 @@ const copy = () => {
 
 const encryptAction = (phrase) => {
   const message = encrypt(phrase, dictionary)
-  message === '' ? showHtml(message) : hideHtml(message)
+  message === '' ? showIcon(message) : hideIcon(message)
+  fixHTMLHeight()
+}
 
+const fixHTMLHeight = () => {
   if (size < textarea.scrollHeight) {
     if (width < 768) {
       textarea.style.height = "auto"
@@ -74,29 +82,29 @@ const encryptAction = (phrase) => {
       body.style.height = `calc(${main.clientHeight}px + 350px)`
     }
   }
-
 }
+
 
 const decryptAction = (phrase) => {
   const message = decrypt(phrase, dictionary)
-  message === '' ? showHtml() : hideHtml(message)
+  message === '' ? showIcon() : hideIcon(message)
 }
 
-const hideHtml = (message) => {
+const hideIcon = (message) => {
   document.querySelector(".notext").style.display = "none"
   document.querySelector(".inputRequest").style.display = "none"
   document.querySelector(".encryptedText").style.display = "block"
-  document.querySelector(".copy").style.display = "block"
+  document.querySelector("#copy").style.display = "block"
   document.querySelector(".encryptedText").innerHTML = message
   document.querySelector('.message img').style.display = "none"
   document.querySelector('.message').style["justify-content"] = "space-between"
 }
 
-const showHtml = () => {
+const showIcon = () => {
   document.querySelector(".notext").style.display = "block"
   document.querySelector(".inputRequest").style.display = "block"
   document.querySelector(".encryptedText").style.display = "none"
-  document.querySelector(".copy").style.display = "none"
+  document.querySelector("#copy").style.display = "none"
   if (width > 1024) {
     document.querySelector('.message img').style.display = "block"
     document.querySelector('.message').style["justify-content"] = "center"
