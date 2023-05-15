@@ -91,15 +91,16 @@ textarea:focus {
   padding: 1.5rem;
   border-radius: 24px;
   font-size: 1rem;
-  width: 100%;
   font-weight: bold;
   border: none;
   transition: all 0.3s ease;
 }
 
 #copy {
-  width: 330px;
+  max-width: 350px;
+  width: 100%;
   display: none;
+  margin: 0 auto;
 }
 
 #encrypt {
@@ -207,10 +208,6 @@ footer p {
 @media screen and (min-width: 768px) {
   #container {
     min-height: 60vh;
-  }
-
-  main {
-    height: 95vh;
   }
 
   textarea {

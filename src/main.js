@@ -17,17 +17,12 @@ const resize = () => {
   if (size < textarea.scrollHeight) {
     if (width < 768) {
       textarea.style.height = "auto"
-      textarea.style.height = textarea.scrollHeight + "px"
-      main.style.height = "auto"
+      textarea.style.height = textarea.scrollHeight + 5 + "px"
+      console.log(textarea.scrollHeight)
       body.style.height = "auto"
     } else if (width < 1024) {
       textarea.style.height = "auto"
       textarea.style.height = textarea.scrollHeight + "px"
-      main.style.height = "auto"
-      main.style.height = `calc(${textarea.style.height} + ${messagediv.clientHeight}px + 300px)`
-      body.style.height = "auto"
-      const value = heightBody - 800
-      body.style.height = `calc(${main.clientHeight}px + ${value}px)`
     }
   }
 }
@@ -68,18 +63,9 @@ const encryptAction = (phrase) => {
 
 const fixHTMLHeight = () => {
   if (size < textarea.scrollHeight) {
-    if (width < 768) {
+    if (width < 1024) {
       textarea.style.height = "auto"
       textarea.style.height = textarea.scrollHeight + "px"
-      main.style.height = "auto"
-      body.style.height = "auto"
-    } else if (width < 1024) {
-      textarea.style.height = "auto"
-      textarea.style.height = textarea.scrollHeight + "px"
-      main.style.height = "auto"
-      main.style.height = `calc(${textarea.style.height} + ${messagediv.clientHeight}px + 300px)`
-      body.style.height = "auto"
-      body.style.height = `calc(${main.clientHeight}px + 350px)`
     }
   }
 }

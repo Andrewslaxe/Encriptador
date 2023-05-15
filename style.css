@@ -189,12 +189,13 @@ header {
   word-wrap: break-word;
 }
 
-.copy {
+#copy {
   padding: 24px;
   border-radius: 24px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
+  width: calc(100% - 90px);
 }
 
 footer {
