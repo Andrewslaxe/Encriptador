@@ -18,11 +18,7 @@ const resize = () => {
     if (width < 768) {
       textarea.style.height = "auto"
       textarea.style.height = textarea.scrollHeight + 5 + "px"
-      console.log(textarea.scrollHeight)
       body.style.height = "auto"
-    } else if (width < 1024) {
-      textarea.style.height = "auto"
-      textarea.style.height = textarea.scrollHeight + "px"
     }
   }
 }
@@ -57,7 +53,7 @@ const copy = () => {
 
 const encryptAction = (phrase) => {
   const message = encrypt(phrase, dictionary)
-  message === '' ? showIcon(message) : hideIcon(message)
+  message === '' ? showIcon() : hideIcon(message)
   fixHTMLHeight()
 }
 
