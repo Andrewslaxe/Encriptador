@@ -5,50 +5,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="fixed.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.png">
   <title>Encryptor</title>
 </head>
 
 <body>
+  <header>
+    <img src="assets/aluraicon.svg" alt="logo" class="logo">
+  </header>
   <main>
-    <header>
-      <img src="assets/aluraicon.svg" />
-    </header>
-    <div class="container" id="container">
-      <textarea id="myTextarea" oninput="resize()" placeholder="Ingrese el texto aquí"></textarea>
+    <div id="encrypt__container">
+      <textarea name="text" id="text" placeholder="Ingrese el texto aquí" oninput="resize()" /></textarea>
+      <div>
+        <div id="advice">
+          <img src="assets/exclamation.svg" alt="exclamation" class="exclamation">
+          <span>Solo letras minúsculas y sin acentos</span>
+        </div>
+        <div class="buttons">
+          <button id="encrypt" onclick="encryptAction()">Encriptar</button>
+          <button id="decrypt" onclick="decryptAction()">Desencriptar</button>
+        </div>
+      </div>
+    </div>
+    <div id="result__container">
+      <img src="assets/figure.svg" alt="figure" class="figure">
+      <div id="not__found">Ningún mensaje fue encontrado</div>
+      <span id="request__input">Ingresa el texto que desees encriptar o desencriptar</span>
+      <span id="result__text"></span>
+      <button id="copy__button" onclick="copyToClipboard()">Copiar</button>
+      <button id="clear__button" onclick="clearContent()">Limpiar</button>
+    </div>
 
-      <div class="requirements">
-        <img src="assets/exclamation.svg">
-        <p>Solo letras minúsculas y sin acentos</p>
-      </div>
-      <div class="buttons">
-        <button id="encrypt" onclick='encryptAction(document.getElementById("myTextarea").value)'>
-          <p>Encriptar</p>
-        </button>
-        <button id="decrypt" onclick='decryptAction(document.getElementById("myTextarea").value)'>
-          <p>Desencriptar</p>
-        </button>
-      </div>
-    </div>
-    <div class="message">
-      <img src="./assets/figure.svg">
-      <div class=" messageContainer">
-        <p class="notext">Ningún mensaje fue encontrado</p>
-        <p class="inputRequest">Ingresa el texto que desees encriptar o desencriptar.</p>
-        <p class="encryptedText" style="display: none;"></p>
-      </div>
-      <button id="copy" onclick="copy()">Copiar</button>
-    </div>
+    <dialog>
+      <h1>Advertencia!</h1>
+      <p id="dialog__text">Solo se aceptan letras minúsculas y sin acentos.</p>
+      <button id="dialog__button" onclick="hideDialog()">Aceptar</button>
+    </dialog>
   </main>
   <footer>
-    <img id="hollow" src="assets/Hollow.png">
+    <img id="hollow" src="assets/Hollow.png" alt="hollow">
     <p>Developed by <a href="https://andrewslaxe.github.io/portfolio/">Kengan</a></p>
     <a href="https://www.linkedin.com/in/andresperaza/" class="social">
-      <img src="assets/linkedin.svg" />
+      <img src="assets/linkedin.svg" alt="linkedin" />
     </a>
     <a href="https://github.com/Andrewslaxe" class="social">
-      <img src="assets/github.svg" />
+      <img src="assets/github.svg" alt="github" />
     </a>
   </footer>
   <script src="src/main.js"></script>
