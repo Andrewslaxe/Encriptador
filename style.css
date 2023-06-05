@@ -13,7 +13,8 @@
 }
 
 html {
-  height: 100%;
+  font-size: 16px;
+  background-color: #F3F5FC;
 }
 
 a {
@@ -22,334 +23,322 @@ a {
 }
 
 body {
-  background-color: #F3F5FC;
-  color: var(--dark-blue);
-  padding: 24px 16px;
+  padding: 4%;
+}
+
+
+header {
+  width: 100%;
+  margin: 4% 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
 }
 
 main {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 textarea {
   border: none;
-  background-color: #F3F5FC;
   resize: none;
-}
-
-textarea:focus {
-  outline: none;
+  width: 100%;
+  min-height: 50vh;
+  font-size: 2rem;
+  margin: 10% 0;
+  background-color: transparent;
+  color: var(--dark-blue);
+  height: auto;
 }
 
 textarea::placeholder {
   color: var(--dark-blue);
 }
 
-button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+textarea:focus {
+  outline: none;
 }
 
-header {
-  height: 96px;
-}
-
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.text {
-  width: 100%;
-  height: 300px;
-  font-size: 32px;
-  line-height: 48px;
-  color: var(--dark-blue);
-  min-height: 74%;
-  margin-bottom: 30px;
-}
-
-.requirements {
+#advice {
   display: inline-flex;
+  align-items: center;
+  padding: 1rem 0;
 }
 
-.requirements img {
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-}
-
-.requirements p {
-  font-size: 12px;
-  line-height: 18px;
-  color: var(--gray);
+#advice img {
+  padding: 0 3px;
 }
 
 .buttons {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: space-between;
-  height: 160px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .buttons button,
-.copy {
-  font-size: 16px;
-  line-height: 19px;
-  border-radius: 18px;
-  font-weight: bold;
-  padding: 21px;
-}
-
-.buttons #encrypt {
-  background-color: var(--dark-blue);
-  color: white;
-  margin-bottom: 24px;
-  margin: 1px solid var(--dark-blue);
+#copy__button,
+#clear__button {
+  padding: 1.5rem;
+  border-radius: 24px;
+  font-size: 1rem;
+  border: none;
   transition: all 0.3s ease;
 }
 
+#copy__button,
+#clear__button {
+  margin-top: 1.5rem;
+  background-color: white;
+  color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+}
 
+#copy__button,
+#clear__button {
+  width: 100%;
+  display: none;
+}
 
-.buttons #encrypt:hover {
+#dialog__button {
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border: none;
+}
+
+#encrypt,
+#dialog__button {
+  background-color: var(--dark-blue);
+  color: white;
+}
+
+#encrypt:hover,
+#dialog__button:hover {
   background-color: #04172f;
   margin: 1px solid #F3F5FC;
 }
 
-.buttons #encrypt:active {
+#encrypt:active,
+#dialog__button:active {
   transform: scale(0.95);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.566);
 
 }
 
-.buttons #decrypt,
-.copy {
+#decrypt {
   background-color: white;
   color: var(--dark-blue);
   border: 1px solid transparent;
   transition: all 0.3s ease;
 }
 
-.buttons #decrypt:hover,
-.copy:hover {
+#decrypt:hover,
+#copy__button:hover,
+#clear__button:hover {
   background-color: #e7ecfe;
 
 }
 
-.buttons #decrypt:active,
-.copy:active {
+#decrypt:active,
+#copy__button:active,
+#clear__button:active {
   transform: scale(0.95);
   box-shadow: 3px 2px 22px 1px var(--dark-blue);
 }
 
-
-.message {
-  border-radius: 24px;
+#result__container {
+  margin: 3rem 0;
+  padding: 2rem 3rem;
+  border-radius: 2rem;
   background-color: white;
-  margin: 64px 16px 16px 16px;
+  text-align: center;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  padding: 32px;
-  margin-bottom: 32px;
 }
 
-.message img {
+.figure {
   display: none;
 }
 
-.messageContainer .notext {
+#not__found {
   font-style: normal;
   text-align: center;
   color: var(--grayDark);
-  font-weight: 700;
-  font-size: 24px;
+  font-weight: bold;
+  font-size: 1.5rem;
   line-height: 29px;
   margin-bottom: 16px;
 }
 
-.messageContainer .inputRequest {
+#result__text {
+  font-style: normal;
   text-align: center;
-  color: var(--grayDark);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-}
-
-.encryptedText {
-  font-size: 24px;
-  line-height: 36px;
-  margin-bottom: 32px;
+  color: var(--dark-blue);
+  font-size: 1.5rem;
+  line-height: 29px;
+  margin-bottom: 16px;
   word-wrap: break-word;
+  overflow: auto;
 }
 
-#copy {
-  padding: 24px;
-  border-radius: 24px;
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  width: calc(100% - 90px);
+dialog {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  border: none;
+}
+
+dialog h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--dark-blue);
+}
+
+dialog p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadein 0.5s forwards;
+}
+
+dialog[open] {
+  pointer-events: auto;
+  animation: slidein 0.5s forwards;
+}
+
+dialog.close[open] {
+  animation: slideout 0.5s forwards;
+}
+
+dialog.close::backdrop {
+  animation: fadeout 0.5s forwards;
 }
 
 footer {
+  margin-top: 2rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 80px;
-  color: var(--dark-blue);
-  text-align: center;
-}
-
-footer img {
-  width: 24px;
-  height: 24px;
+  justify-content: center;
 }
 
 footer p {
-  margin: 0px 30px;
-}
-
-footer #hollow {
-  width: 80px;
-  height: 80px;
+  margin-right: 8px;
 }
 
 .social {
-  padding: 10px;
+  padding: 5px;
 }
 
-
-
-@media screen and (min-width: 768px) {
-
-  body {
-    min-height: calc(100% - 100px);
-  }
-
-  main {
-    padding: 40px 84px 0px 84px;
-  }
-
-  .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 68px;
-  }
-
-  .buttons button {
-    min-width: 48%;
-    max-width: 330px;
-  }
-
-  .buttons #encrypt {
-    margin-bottom: 0px;
-  }
-
-  .text {
-    min-height: 200px;
-  }
-
+.social img {
+  width: 24;
+  height: 24px;
 }
+
+#hollow {
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideout {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
 
 @media screen and (min-width: 1024px) {
+  header {
+    margin: 0;
+  }
+
   body {
-    height: calc(100% - 100px);
+    padding-right: 0;
+    padding: 3% 0 0 3%;
+  }
+
+  textarea {
+    min-height: 40vh;
+    height: calc(100vh - 11rem - 120px);
+    margin: 0px;
+    padding-top: 2rem;
   }
 
   main {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: unset;
-    padding: 40px 0 40px 84px;
-    height: 100%;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    height: calc(100vh - 9rem);
   }
 
-  .container {
-    width: 50%;
+  #result__container {
+    width: 25%;
+    min-width: 300px;
+    margin: 0;
+    translate: 0 -3.25rem;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+  }
+
+  #encrypt__container {
+    width: 50%;
+    min-width: 300px;
+  }
+
+  .figure {
+    display: block;
+    width: 100%;
   }
 
   .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 68px;
-    width: 100%;
-  }
-
-  .buttons button {
-    min-width: 280px;
-    max-width: 330px;
-  }
-
-  .buttons #encrypt {
-    margin-bottom: 0px;
-  }
-
-  .message {
-    width: 30%;
-    margin: 0px;
-    margin-left: 20px;
-    padding: 0px;
-    justify-content: center;
-    height: 100%;
-  }
-
-
-  .messageContainer {
-    margin: 0px auto;
-    padding: 32px;
-    max-height: 100%;
-    overflow: hidden;
-    overflow-wrap: break-word;
-    width: calc(100% - 64px);
-  }
-
-  .copy {
-    margin: 32px;
-  }
-
-  .message img {
-    display: block;
-  }
-
-  .text {
-    margin-top: 50px;
-    min-height: 70%;
-    width: 100%;
-  }
-
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    color: var(--dark-blue);
-    text-align: center;
-  }
-
-
-  footer p {
-    margin: 0px 30px;
-  }
-
-  footer #hollow {
-    width: 80px;
-    height: 80px;
-  }
-
-  .social {
-    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
