@@ -224,7 +224,7 @@ dialog.close::backdrop {
 }
 
 footer {
-  margin-top: 2rem;
+  margin-top: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
